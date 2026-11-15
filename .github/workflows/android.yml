@@ -28,6 +28,11 @@ jobs:
         with:
           packages: ''
 
+      - name: Install native build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y protobuf-compiler
+
       - name: Install Android NDK and CMake
         run: |
           sdkmanager --install "platform-tools" "platforms;android-35" "build-tools;35.0.0" "cmake;3.22.1" "ndk;28.2.13676358"
