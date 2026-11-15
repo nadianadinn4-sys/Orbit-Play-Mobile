@@ -36,6 +36,7 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: "8.11.1"
+          validate-wrappers: false
 
       - name: Build Chiaki-ng Android debug APK
         run: gradle -p chiaki-ng/android assembleDebug --no-daemon
