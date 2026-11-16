@@ -60,7 +60,7 @@ colors.write_text(c, encoding="utf-8")
 x = layout.read_text(encoding="utf-8")
 x = x.replace(
     '    android:clipChildren="false">',
-    '    android:clipChildren="false"\\n    android:background="#080E18">',
+    '    android:clipChildren="false">' + chr(10) + '    android:background="#080E18">',
     1
 )
 old_title = '''            <androidx.appcompat.widget.AppCompatTextView
