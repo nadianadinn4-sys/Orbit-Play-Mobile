@@ -54,11 +54,11 @@ for old, new, label in [
 colors.write_text(c, encoding="utf-8")
 
 x = layout.read_text(encoding="utf-8")
-x = replace_once(
-    x, '    android:clipChildren="false">',
-    '    android:clipChildren="false">' + NL + '    android:background="#080E18">',
-    "main screen background"
-) if 'android:background="#080E18"' not in x else x
+if 'android:background="#080E18"' not in x:
+    anchor = '    android:clipChildren="false">'
+    if anchor not in x:
+        raise SystemExit("Could not locate the main screen root for its background")
+    x = x.replace(anchor, anchor + NL + '    android:background="#080E18">', 1)
 old_title = '''            <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
