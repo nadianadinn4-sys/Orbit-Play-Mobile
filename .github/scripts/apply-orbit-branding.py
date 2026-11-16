@@ -109,8 +109,8 @@ for old, new, label in [
     ('android:elevation="8dp"', 'android:elevation="4dp"', "console card elevation"),
     ('            android:textSize="32sp"' + NL + '            android:gravity="center"' + NL + '            android:textColor="?attr/colorOnSurface"',
      '            android:textSize="27sp"' + NL + '            android:gravity="center"' + NL + '            android:textColor="#39C6F4"', "console name styling"),
-    ('            android:textSize="16sp"' + NL + '            android:gravity="center"' + NL + '            android:textColor="?attr/colorOnSurface"',
-     '            android:textSize="14sp"' + NL + '            android:gravity="center"' + NL + '            android:textColor="#C5D5E5"', "console address styling"),
+    ('            android:id="@+id/hostTextView"' + NL + '            android:layout_width="match_parent"' + NL + '            android:layout_height="wrap_content"' + NL + '            android:fontFamily="sans-serif-condensed-medium"' + NL + '            app:layout_constraintTop_toBottomOf="@id/nameTextView"' + NL + '            tools:text="Address: Host"' + NL + '            android:textSize="16sp"' + NL + '            android:gravity="center"' + NL + '            android:textColor="?attr/colorOnSurface"',
+     '            android:id="@+id/hostTextView"' + NL + '            android:layout_width="match_parent"' + NL + '            android:layout_height="wrap_content"' + NL + '            android:fontFamily="sans-serif-condensed-medium"' + NL + '            app:layout_constraintTop_toBottomOf="@id/nameTextView"' + NL + '            tools:text="Address: Host"' + NL + '            android:textSize="14sp"' + NL + '            android:gravity="center"' + NL + '            android:textColor="#C5D5E5"', "console address styling"),
 ]:
     h = replace_once(h, old, new, label)
 h = h.replace('            android:textColor="?attr/colorOnSurface"' + NL + '            android:textSize="16sp"',
