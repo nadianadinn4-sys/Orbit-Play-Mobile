@@ -118,7 +118,7 @@ h = h.replace('            android:textColor="?attr/colorOnSurface"' + NL + '   
 host_layout.write_text(h, encoding="utf-8")
 
 t = styles.read_text(encoding="utf-8")
-anchor = '        <item name="colorOnPrimary">#ffffff</item>'
+anchor = '<style name="AppTheme" parent="Theme.MaterialComponents.NoActionBar">'
 addition = NL.join([
     '        <item name="colorSurface">#111C2D</item>',
     '        <item name="colorOnSurface">#EAF7FF</item>',
